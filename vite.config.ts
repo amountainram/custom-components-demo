@@ -8,7 +8,11 @@ export default defineConfig(({ mode }) => ({
   build: {
     chunkSizeWarningLimit: 3000,
     cssCodeSplit: false,
+    emptyOutDir: false,
+    manifest: true,
+    minify: 'esbuild',
     modulePreload: mode !== 'min',
+    outDir: 'dist',
     rollupOptions: {
       external: mode === 'min' ? ['react', 'react-dom', 'rxjs'] : [],
       input: {
@@ -18,10 +22,6 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: (chunk) => `${chunk.name}.${mode === 'min' ? 'min.' : ''}esm.js`,
       },
     },
-    outDir: 'dist',
-    emptyOutDir: false,
-    manifest: true,
-    minify: 'esbuild',
   },
   esbuild: {
     charset: 'utf8',

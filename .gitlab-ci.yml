@@ -20,3 +20,19 @@ default:
 
 variables:
   IMAGE_NAME: vuhl-api-portal/demo-webcomponents-library-template
+
+cdn-release:
+  stage: release
+  image: miaplatform/cdn-publish:0.5.0
+  needs:
+    - install-dependencies
+    - build-site
+    - test
+    - test-latest
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  before_script:
+    - yarn install --froken-lockfile
+    - yarn build
+  script:
+    - cdn publish -k "$CDN_STORAGE_ACCESS_KEY" -s mia-platform-test -b 20

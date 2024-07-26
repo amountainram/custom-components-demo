@@ -32,6 +32,8 @@ module.exports = {
   rules: {
     'no-unused-vars': ['error', { varsIgnorePattern: '_' }],
     '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '_' }],
-    'sort-keys-fix/sort-keys-fix': ['error', 'ask']
+    'sort-keys-fix/sort-keys-fix': ['error', 'asc'],
+    'sort-keys': 'off',
+    'sort-imports': 'off'
   }
 }

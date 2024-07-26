@@ -1,5 +1,5 @@
 {
-  "name": "demo-webcomponents-library-template",
+  "name": "@backoffice/demo-webcomponents-library-template",
   "version": "0.0.1",
   "type": "module",
   "packageManager": "yarn@1.22.1",
