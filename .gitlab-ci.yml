@@ -1,0 +1,22 @@
+include:
+  - file: "/build/node/template-react-yarn.yml"
+    project: "platform/pipelines-templates"
+    ref: "master"
+  - file: "/build/node/template-react-yarn-test-latest.yml"
+    project: "platform/pipelines-templates"
+    ref: "master"
+
+test:
+  script:
+    - yarn lint
+    - yarn coverage
+
+.docker-job:
+  variables:
+    COMMIT_SHA_FILEPATH: /etc/nginx/commit.sha
+
+default:
+  image: node:20-alpine
+
+variables:
+  IMAGE_NAME: vuhl-api-portal/demo-webcomponents-library-template
