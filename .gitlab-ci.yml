@@ -35,4 +35,4 @@ cdn-release:
     - yarn install --frozen-lockfile
     - yarn build
   script:
-    - cdn publish -k "$CDN_STORAGE_ACCESS_KEY" -s mia-platform-test -b 20
+    - cdn publish -k "$CDN_STORAGE_ACCESS_KEY" -s mia-platform-test -p ./package.json -b 20
