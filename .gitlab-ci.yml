@@ -32,7 +32,7 @@ cdn-release:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   before_script:
-    - yarn install --froken-lockfile
+    - yarn install --frozen-lockfile
     - yarn build
   script:
     - cdn publish -k "$CDN_STORAGE_ACCESS_KEY" -s mia-platform-test -b 20
