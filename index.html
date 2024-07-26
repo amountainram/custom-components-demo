@@ -38,6 +38,7 @@
     <script type="module">
       import { ReplaySubject } from "https://esm.sh/rxjs@7.8.1"
       import { render, createPool } from "https://cdn.mia-platform.eu/micro-lc/composer/2.1.0/dist/bundle/index.min.js"
+      import "https://cdn.mia-platform.eu/backoffice/bk-web-components/1.5.6/dist/bk-web-components.esm.js"
 
       (async function () {
         const root = document.getElementById('root')
@@ -50,19 +51,26 @@
                 attributes: { class: 'container' },
                 content: [
                   {
-                    tag: 'custom-typography',
-                    properties: {
-                      content: 'Showcase of a custom web-components library!'
-                    }
+                    tag: 'refresh-button',
                   },
                   {
-                    tag: 'div',
-                    attributes: { class: 'counter' },
-                    content: [
-                      { tag: 'custom-button' },
-                      { tag: 'custom-counter' },
-                    ]
-                  }
+                    tag: 'bk-pagination'
+                  },
+                  {
+                    tag: 'pokemon-api-client'
+                  },
+                  {
+                    tag: 'bk-table',
+                    properties: {
+                      dataSchema: {
+                        type: 'object',
+                        properties: {
+                          name: {type: 'string'},
+                          url: {type: 'string', format: 'url'}
+                        }
+                      }
+                    }
+                  },
                 ]
               }
             ],

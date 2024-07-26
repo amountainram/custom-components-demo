@@ -3,6 +3,8 @@ button {
   outline: 0;
   cursor: pointer;
   color: white;
+  width: 32px;
+  height: 32px;
   background-color: rgb(84, 105, 212);
   box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px,
               rgb(0 0 0 / 0%) 0px 0px 0px 0px, 

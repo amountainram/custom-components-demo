@@ -1,17 +1,8 @@
 # demo-webcomponents-library-template
 
-## Summary
+see [back-kit-engine](https://github.com/micro-lc/back-kit-engine/blob/main/base/README.md#superclasses) for info about components and events
 
-Use this template to set up a Web-Components library usable in micro-lc
+This lib exposes 2 custom components:
 
-## Whats inside
-
-> TODO
-
-## Local development
-
-> TODO
-
-## Use in micro-lc
-
-> TODO
+1. `pokemon-api-client`
+2. `refresh-button`

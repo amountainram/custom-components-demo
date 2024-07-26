@@ -21,7 +21,8 @@ module.exports = {
   },
   plugins: [
     "react",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "sort-keys-fix"
   ],
   settings: {
     react: {
@@ -31,5 +32,6 @@ module.exports = {
   rules: {
     'no-unused-vars': ['error', { varsIgnorePattern: '_' }],
     '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '_' }],
+    'sort-keys-fix/sort-keys-fix': ['error', 'ask']
   }
 }

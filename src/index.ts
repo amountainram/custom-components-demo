@@ -1,3 +1,2 @@
-import './button'
-import './counter'
-import './typography'
+import './refresh-button'
+import './pokemon-api-client'
