@@ -2,6 +2,11 @@
   "name": "@backoffice/demo-webcomponents-library-template",
   "version": "0.0.1",
   "type": "module",
+  "files": [
+    "package.json",
+    "dist",
+    "LICENSE"
+  ],
   "packageManager": "yarn@1.22.1",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
