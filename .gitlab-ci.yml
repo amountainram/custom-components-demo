@@ -40,5 +40,5 @@ cdn-release:
         -k "$CDN_STORAGE_ACCESS_KEY" \
         -s mia-platform-test \
         -p ./package.json \
-        --override-version latest
+        --override-version latest \
         -b 20
