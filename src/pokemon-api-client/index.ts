@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-shadow
 import { ChangeQueryPayload, Event, EventBus, changeQuery, countData, displayData, loadingData } from '@micro-lc/back-kit-engine'
 import { BkHttpBase } from '@micro-lc/back-kit-engine/base'
+import { Manifest } from '@micro-lc/compose-toolkit'
 import { customElement, property } from 'lit/decorators.js'
 import { bufferTime, filter, map } from 'rxjs'
 
@@ -22,7 +23,13 @@ interface GetPokemonResult {
 
 @customElement('pokemon-api-client')
 class PokemonApiClient extends BkHttpBase {
+  static get __manifest(): Promise<Manifest> {
+    return import('./manifest').then(({ default: manifest }) => manifest)
+  }
+
   pageSize = PAGE_SIZE
+
+  @property({ attribute: true, type: String }) baseUrl = BASE_URL
 
   @property({ attribute: true, type: Number }) startupMillis = 1_000
 
@@ -43,7 +50,7 @@ function changeQueryListener(this: PokemonApiClient, bus: EventBus) {
 
       const offset = pageNumber > 0 ? (pageNumber - 1) * pageSize : 0
 
-      const url = new URL(`${BASE_URL}/pokemon`)
+      const url = new URL(`${this.baseUrl}/pokemon`)
       url.searchParams.set('offset', String(offset))
       url.searchParams.set('limit', String(pageSize))
 

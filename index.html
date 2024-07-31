@@ -15,10 +15,12 @@
   </head>
   <body>
     <style>
+      body, html, #root {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
       .container {
-        width: 100vh;
-        height: 100vw;
-        padding: 24px;
         display: flex;
         flex-direction: column;
         gap: 24px;
@@ -51,26 +53,34 @@
                 attributes: { class: 'container' },
                 content: [
                   {
-                    tag: 'refresh-button',
-                  },
-                  {
-                    tag: 'bk-pagination'
-                  },
-                  {
-                    tag: 'pokemon-api-client'
-                  },
-                  {
-                    tag: 'bk-table',
+                    tag: 'rounded-menu',
                     properties: {
-                      dataSchema: {
-                        type: 'object',
-                        properties: {
-                          name: {type: 'string'},
-                          url: {type: 'string', format: 'url'}
-                        }
-                      }
+                      items: [
+                        {key: 'item1', label: 'Item 1'}
+                      ]
                     }
-                  },
+                  }
+                  // {
+                  //   tag: 'refresh-button',
+                  // },
+                  // {
+                  //   tag: 'bk-pagination'
+                  // },
+                  // {
+                  //   tag: 'pokemon-api-client'
+                  // },
+                  // {
+                  //   tag: 'bk-table',
+                  //   properties: {
+                  //     dataSchema: {
+                  //       type: 'object',
+                  //       properties: {
+                  //         name: {type: 'string'},
+                  //         url: {type: 'string', format: 'url'}
+                  //       }
+                  //     }
+                  //   }
+                  // },
                 ]
               }
             ],

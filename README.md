@@ -6,3 +6,7 @@ This lib exposes 2 custom components:
 
 1. `pokemon-api-client`
 2. `refresh-button`
+
+## doc manifest
+
+see manifest [doc](https://docs.mia-platform.eu/docs/microfrontend-composer/external-components/manifest)

@@ -10,11 +10,11 @@ import { BkComponent } from '@micro-lc/back-kit-engine/base'
 
 @customElement('refresh-button')
 class _ extends BkComponent<PropsWithChildren<RefreshButtonProps>> {
-  static styles = unsafeCSS(style)
-
   static get __manifest(): Promise<Manifest> {
     return import('./manifest').then(({ default: manifest }) => manifest)
   }
+
+  static styles = unsafeCSS(style)
 
   @query('#button-container') container!: HTMLDivElement
 

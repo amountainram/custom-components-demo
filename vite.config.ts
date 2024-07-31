@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => ({
       output: {
         entryFileNames: (chunk) => `${chunk.name}.${mode === 'min' ? 'min.' : ''}esm.js`,
       },
+      preserveEntrySignatures: 'allow-extension',
     },
   },
   esbuild: {
